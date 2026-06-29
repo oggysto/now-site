@@ -8,11 +8,11 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "NOW — Le Podcast",
+  title: "Now Podcast",
   description:
-    "NOW est le podcast de notre vingtaine. Animé par Oggy et Thomas, deux étudiants de la Junior-Entreprise de l'INSA Lyon.",
+    "NOW est le podcast de notre vingtaine. Animé par Oggy et Thomas, deux étudiants de l'INSA Lyon.",
   openGraph: {
-    title: "NOW — Le Podcast",
+    title: "Now Podcast",
     description: "Entrepreneuriat, ambitions et parcours inspirants.",
     images: [
       "https://media.redcircle.com/images/2025/10/13/17/311912a5-4999-4038-bc6c-3366e1b2a2c0_now.jpg",

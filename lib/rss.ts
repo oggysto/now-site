@@ -33,8 +33,9 @@ function parseEpisodeTitle(raw: string): { episodeNumber: number; title: string;
   const separatorMatch = rest.match(/^(.+?)\s*[–-]\s*/);
   const guest = separatorMatch ? separatorMatch[1].trim() : rest.trim();
 
-  // Title = everything after the guest name (keep the full tagline)
-  const title = rest.replace(/^.+?\s*[–-]\s*/, '').trim() || rest.trim();
+  // Title = everything after the guest name (keep the full tagline), strip em dashes
+  const title = (rest.replace(/^.+?\s*[–-]\s*/, '').trim() || rest.trim())
+    .replace(/\s*[—–]\s*/g, ' - ');
 
   return { episodeNumber, title, guest };
 }

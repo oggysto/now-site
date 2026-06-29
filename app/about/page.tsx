@@ -1,9 +1,6 @@
 import Nav from "@/components/Nav";
 import Link from "next/link";
 
-const SPOTIFY_URL = "https://open.spotify.com/show/nowpodcast";
-const APPLE_URL = "https://podcasts.apple.com/fr/podcast/now/id1234567890";
-
 export default function AboutPage() {
   return (
     <main>
@@ -38,9 +35,8 @@ export default function AboutPage() {
           </p>
           <p className="text-[#3D3545]/70 leading-relaxed">
             Animé par <strong>Oggy</strong> et <strong>Thomas</strong>, deux étudiants
-            de la Junior-Entreprise de l&apos;INSA Lyon, il explore cette période de vie
-            où l&apos;on se pose mille questions&nbsp;: les études, l&apos;argent, les premiers
-            jobs, les ambitions… et les doutes.
+            de l&apos;INSA Lyon, il explore cette période de vie où l&apos;on se pose mille
+            questions&nbsp;: les études, l&apos;argent, les premiers jobs, les ambitions… et les doutes.
           </p>
           <p className="text-[#3D3545]/70 leading-relaxed mt-3">
             À travers des échanges avec des entrepreneurs, dirigeants ou artistes,
@@ -65,8 +61,7 @@ export default function AboutPage() {
               <h3 className="font-black text-[#3D3545] text-lg">Oggy</h3>
               <p className="text-[#9B7DC8] text-sm font-medium mb-3">Co-host</p>
               <p className="text-[#3D3545]/60 text-sm leading-relaxed">
-                Étudiant à l&apos;INSA Lyon, passionné par l&apos;entrepreneuriat et les
-                parcours inspirants.
+                Étudiant à l&apos;INSA Lyon.
               </p>
             </div>
             <div className="bg-white border border-[#E8D8FF] rounded-2xl p-6">
@@ -79,39 +74,13 @@ export default function AboutPage() {
               <h3 className="font-black text-[#3D3545] text-lg">Thomas</h3>
               <p className="text-[#9B7DC8] text-sm font-medium mb-3">Co-host</p>
               <p className="text-[#3D3545]/60 text-sm leading-relaxed">
-                Étudiant à l&apos;INSA Lyon, curieux des trajectoires de vie et des
-                leçons qu&apos;elles portent.
+                Étudiant à l&apos;INSA Lyon.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Écouter */}
-        <section className="mb-14">
-          <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#9B7DC8] block mb-5">
-            Écouter
-          </span>
-          <div className="flex gap-3 flex-wrap">
-            <a
-              href={SPOTIFY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 rounded-full text-sm font-semibold text-white bg-[#7B5EAF] hover:bg-[#9B7DC8] transition-colors"
-            >
-              🎵 Spotify
-            </a>
-            <a
-              href={APPLE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 rounded-full text-sm font-semibold text-[#7B5EAF] border border-[#C4A8E8] hover:bg-[#EDE0FF] transition-colors"
-            >
-              🎙 Apple Podcasts
-            </a>
-          </div>
-        </section>
-
-        <Link
+<Link
           href="/"
           className="text-sm font-semibold text-[#9B7DC8] hover:text-[#7B5EAF] transition-colors"
         >

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Nav from "@/components/Nav";
 import Link from "next/link";
-import { SiLinkedin } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
 
 const hosts = [
   {
@@ -85,7 +85,7 @@ export default function AboutPage() {
                       aria-label={`LinkedIn de ${host.name}`}
                       className="text-[#C4A8E8] hover:text-[#7B5EAF] transition-colors"
                     >
-                      <SiLinkedin size={16} />
+                      <FaLinkedin size={16} />
                     </a>
                   </div>
                   <p className="text-[#9B7DC8] text-sm font-medium">Co-host</p>

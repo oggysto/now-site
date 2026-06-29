@@ -1,10 +1,24 @@
+import Image from "next/image";
 import Nav from "@/components/Nav";
 import Link from "next/link";
+import { SiLinkedin } from "react-icons/si";
+
+const hosts = [
+  {
+    name: "Oggy",
+    photo: "/oggy.jpg",
+    linkedin: "https://www.linkedin.com/in/oggysto/",
+  },
+  {
+    name: "Thomas",
+    photo: "/thomas.jpg",
+    linkedin: "https://www.linkedin.com/in/thomasdl/",
+  },
+];
 
 export default function AboutPage() {
   return (
     <main>
-      {/* Hero — même style que la homepage */}
       <div
         className="relative"
         style={{
@@ -22,10 +36,9 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Content */}
       <div className="max-w-3xl mx-auto px-6 sm:px-10 py-14">
 
-        {/* Description du podcast */}
+        {/* Description */}
         <section className="mb-14">
           <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#9B7DC8] block mb-5">
             Le podcast
@@ -45,42 +58,44 @@ export default function AboutPage() {
           </p>
         </section>
 
-        {/* Les hosts */}
+        {/* Hosts */}
         <section className="mb-14">
           <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#9B7DC8] block mb-6">
             Les hosts
           </span>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <div className="bg-white border border-[#E8D8FF] rounded-2xl p-6">
-              <div
-                className="w-16 h-16 rounded-full mb-4"
-                style={{
-                  background: "linear-gradient(135deg, #C4A8E8, #7B5EAF)",
-                }}
-              />
-              <h3 className="font-black text-[#3D3545] text-lg">Oggy</h3>
-              <p className="text-[#9B7DC8] text-sm font-medium mb-3">Co-host</p>
-              <p className="text-[#3D3545]/60 text-sm leading-relaxed">
-                Étudiant à l&apos;INSA Lyon.
-              </p>
-            </div>
-            <div className="bg-white border border-[#E8D8FF] rounded-2xl p-6">
-              <div
-                className="w-16 h-16 rounded-full mb-4"
-                style={{
-                  background: "linear-gradient(135deg, #C4A8E8, #7B5EAF)",
-                }}
-              />
-              <h3 className="font-black text-[#3D3545] text-lg">Thomas</h3>
-              <p className="text-[#9B7DC8] text-sm font-medium mb-3">Co-host</p>
-              <p className="text-[#3D3545]/60 text-sm leading-relaxed">
-                Étudiant à l&apos;INSA Lyon.
-              </p>
-            </div>
+            {hosts.map((host) => (
+              <div key={host.name} className="bg-white border border-[#E8D8FF] rounded-2xl p-6 flex items-center gap-4">
+                <div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-[#EDE0FF]">
+                  <Image
+                    src={host.photo}
+                    alt={host.name}
+                    fill
+                    className="object-cover"
+                    sizes="64px"
+                  />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2">
+                    <h3 className="font-black text-[#3D3545] text-lg">{host.name}</h3>
+                    <a
+                      href={host.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`LinkedIn de ${host.name}`}
+                      className="text-[#C4A8E8] hover:text-[#7B5EAF] transition-colors"
+                    >
+                      <SiLinkedin size={16} />
+                    </a>
+                  </div>
+                  <p className="text-[#9B7DC8] text-sm font-medium">Co-host</p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
-<Link
+        <Link
           href="/"
           className="text-sm font-semibold text-[#9B7DC8] hover:text-[#7B5EAF] transition-colors"
         >
